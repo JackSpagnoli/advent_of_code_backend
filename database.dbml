@@ -1,13 +1,14 @@
 Table Members {
-    member_id int [pk, increment]
+    member_id int [pk]
     member_name varchar
     global_score int
 }
 
 Table Leaderboards {
-    leaderboard_id int [pk, increment]
+    leaderboard_id int [pk]
     leaderboard_owner int [ref: > Members.member_id]
     event int [ref: > Events.year]
+    api_key varchar
 }
 
 Table Events {
